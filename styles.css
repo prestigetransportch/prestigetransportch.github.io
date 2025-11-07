@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@500&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    margin: 0;
+    background-color: #272727;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #FFFFFF;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+a {
+    color: #DAA520;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #9B0E0E;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #272727;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #9B0E0E;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.lang-switcher button {
+    background: none;
+    border: 1px solid #DAA520;
+    color: #DAA520;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.lang-switcher button:hover, .lang-switcher button.active {
+    background-color: #9B0E0E;
+    color: #272727;
+    border-color: #9B0E0E;
+}
+
+/* Banner */
+#banner {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('imgs/gallery/IMG_1507.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+#slogan-section {
+    background-color: #272727;
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 1px solid #9B0E0E;
+}
+
+#slogan-section .tagline-1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #d4af37;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+#slogan-section .tagline-2 {
+    font-size: 1.2rem;
+    color: #bfa76f;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Sections */
+main section {
+    padding: 8rem 2rem;
+    position: relative;
+}
+
+main section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, #DAA520, #F0E68C, #DAA520);
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    padding: 0 2rem;
+    text-align: justify;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #F0E68C;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(218, 165, 32, 0.5);
+    background-image: linear-gradient(to bottom, #F0E68C, #DAA520);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Gallery Slider */
+.slider {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Contact */
+#contact {
+    text-align: center;
+}
+
+#contact a i {
+    margin-right: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #272727;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: #F0E68C;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(218, 165, 32, 0.5);
+    background-image: linear-gradient(to bottom, #F0E68C, #DAA520);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-content h3 i {
+    margin-right: 0.5rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.address, .social-media {
+    margin: 1rem;
+}
+
+.social-media a {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+
+    .banner-content p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}

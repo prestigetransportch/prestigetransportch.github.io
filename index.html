@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Transport</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head><body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="imgs/logo.jpg" alt="Prestige Transport Logo">
+            </div>
+            <ul>
+                <li><a href="#banner" data-lang="home">Home</a></li>
+                <li><a href="#gallery" data-lang="gallery">Gallery</a></li>
+                <li><a href="#about" data-lang="about">About Us</a></li>
+                <li><a href="#contact" data-lang="contact">Contact</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button onclick="switchLang('en')">EN</button>
+                <button onclick="switchLang('fr')">FR</button>
+                <button onclick="switchLang('de')">DE</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="banner">
+            <div class="banner-content">
+            </div>
+        </section>
+
+        <section id="slogan-section">
+            <p class="tagline-1" data-lang="tagline1">Because Luxury Deserves First-Class Transport</p>
+            <p class="tagline-2" data-lang="tagline2">Swiss-Based, Serving All of Europe</p>
+        </section>
+
+        <section id="gallery">
+            <h2 data-lang="gallery-title">Gallery</h2>
+            <div class="slider">
+                <div class="slides">
+                    <!-- Images will be loaded here by JavaScript -->
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 data-lang="about-title">About Us</h2>
+            <p data-lang="about-text">Prestige Transport is a leading provider of luxury car transportation services. We are based in Switzerland and serve clients all over Europe. Our mission is to provide first-class transport for your valuable vehicles, ensuring they arrive safely and on time. We pride ourselves on our professionalism, reliability, and commitment to customer satisfaction.</p>
+        </section>
+
+        <section id="contact">
+            <h2 data-lang="contact-title">Contact Us</h2>
+            <p data-lang="contact-text">For inquiries and bookings, please contact us at:</p>
+            <a href="mailto:info@prestigetransport.ch"><i class="fas fa-envelope"></i> info@prestigetransport.ch</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="address">
+                <h3 data-lang="address-title"><i class="fas fa-map-marker-alt"></i> Our Address</h3>
+                <p>Prestige Transport AG</p>
+                <p>Bahnhofstrasse 10</p>
+                <p>8001 Zürich, Switzerland</p>
+            </div>
+            <div class="social-media">
+                <h3 data-lang="social-title"><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <a href="https://www.instagram.com/prestigetransportch/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
