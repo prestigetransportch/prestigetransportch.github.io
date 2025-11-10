@@ -36,21 +36,21 @@ nav {
 }
 
 .logo img {
-    height: 50px;
+    height: 60px;
 }
 
-nav ul {
+.nav-links {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-nav ul li {
+.nav-links li {
     margin-left: 2rem;
 }
 
-nav ul li a {
+.nav-links li a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 1.1rem;
@@ -72,6 +72,16 @@ nav ul li a {
     background-color: #3D3D3D;
     color: #FFFFFF;
     border-color: #3D3D3D;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger i {
+    font-size: 1.5rem;
+    color: #272727;
 }
 
 /* Banner */
@@ -164,6 +174,7 @@ h2 {
 .slider {
     position: relative;
     max-width: 800px;
+    max-height: 600px; /* Increased max-height to accommodate vertical images */
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
@@ -172,10 +183,14 @@ h2 {
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    align-items: center; /* Center images vertically */
 }
 
 .slides img {
     width: 100%;
+    height: auto; /* Allow height to adjust based on aspect ratio */
+    max-height: 600px; /* Ensure images don't exceed slider height */
+    object-fit: contain; /* Ensure entire image is visible */
     flex-shrink: 0;
 }
 
@@ -248,8 +263,30 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav ul {
-        display: none;
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .banner-content h1 {
@@ -266,5 +303,16 @@ footer {
 
     .footer-content {
         flex-direction: column;
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
     }
 }

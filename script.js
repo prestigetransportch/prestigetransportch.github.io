@@ -2,7 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
     loadGalleryImages();
     switchLang('en');
     autoSlide();
+    navSlide();
 });
+
+const navSlide = () => {
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    hamburger.addEventListener('click', () => {
+        // Toggle Nav
+        nav.classList.toggle('nav-active');
+
+        // Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+    });
+}
 
 const translations = {
     en: {
@@ -39,10 +60,10 @@ const translations = {
         services: 'Services',
         contact: 'Contact',
         tagline1: 'Because Luxury Deserves First-Class Transport',
-        tagline2: 'Basé en Suisse, au service de toute l\'Europe',
+        tagline2: 'Basé en Suisse, au service de toute lEurope',
         'gallery-title': 'Galerie',
         'about-title': 'À propos de nous',
-        'about-text': 'Prestige Transport est un fournisseur de premier plan de services de transport de voitures de luxe. Nous sommes basés en Suisse et servons des clients dans toute l\'Europe. Notre mission est de fournir un transport de première classe pour vos précieux véhicules, en veillant à ce qu\'ils arrivent en toute sécurité et à temps. Nous sommes fiers de notre professionnalisme, de notre fiabilité et de notre engagement envers la satisfaction du client.',
+        'about-text': 'Prestige Transport est un fournisseur de premier plan de services de transport de voitures de luxe. Nous sommes basés en Suisse et servons des clients dans toute lEurope. Notre mission est de fournir un transport de première classe pour vos précieux véhicules, en veillant à ce quils arrivent en toute sécurité et à temps. Nous sommes fiers de notre professionnalisme, de notre fiabilité et de notre engagement envers la satisfaction du client.',
         'services-title': 'Nos Services',
         'service1-title': 'Transport de voiture de porte à porte',
         'service1-desc': 'Nous enlevons et livrons votre véhicule directement aux endroits de votre choix, partout en Europe.',
@@ -53,7 +74,7 @@ const translations = {
         'service4-title': 'Déménagement saisonnier',
         'service4-desc': 'Idéal pour les maisons de vacances ou les séjours temporaires - déplacez votre voiture avec vous partout en Europe.',
         'service5-title': 'Assurance',
-        'service5-desc': 'Une assurance complète pour une tranquillité d\'esprit totale.',
+        'service5-desc': 'Une assurance complète pour une tranquillité d espírito totale.',
         'contact-title': 'Contactez-nous',
         'contact-text': 'Pour les demandes et les réservations, veuillez nous contacter à:',
         'address-title': 'Notre adresse',
@@ -104,8 +125,19 @@ function switchLang(lang) {
 
 const galleryImages = [
     'imgs/gallery/IMG_0957.png',
-    'imgs/gallery/IMG_1187.png',
-    'imgs/gallery/IMG_1204.png'
+    'imgs/gallery/IMG_1188.png',
+    'imgs/gallery/IMG_1189.png',
+    'imgs/gallery/IMG_1191.png',
+    'imgs/gallery/IMG_1201.png',
+    'imgs/gallery/IMG_1203.png',
+    'imgs/gallery/IMG_1269.png',
+    'imgs/gallery/IMG_1398.png',
+    'imgs/gallery/IMG_1400.png',
+    'imgs/gallery/IMG_1401.png',
+    'imgs/gallery/IMG_1406.png',
+    'imgs/gallery/IMG_1433.png',
+    'imgs/gallery/IMG_1510.png',
+    'imgs/gallery/IMG_1513.png'
 ];
 
 let slideIndex = 0;
