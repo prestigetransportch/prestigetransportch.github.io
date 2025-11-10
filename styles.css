@@ -4,31 +4,29 @@
 body {
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-weight: 500;
-    background-color: #272727;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 20px 20px;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #272727;
     scroll-behavior: smooth;
     line-height: 1.6;
 }
 
 a {
-    color: #DAA520;
+    color: #AD7C00;
     text-decoration: none;
 }
 
 a:hover {
-    color: #9B0E0E;
+    color: #3D3D3D;
 }
 
 /* Header and Navigation */
 header {
-    background-color: #E5E5E5;
+    background-color: #FFFFFF;
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #9B0E0E;
+    border-bottom: 1px solid #3D3D3D;
 }
 
 nav {
@@ -71,9 +69,9 @@ nav ul li a {
 }
 
 .lang-switcher button:hover, .lang-switcher button.active {
-    background-color: #9B0E0E;
+    background-color: #3D3D3D;
     color: #FFFFFF;
-    border-color: #9B0E0E;
+    border-color: #3D3D3D;
 }
 
 /* Banner */
@@ -90,49 +88,35 @@ nav ul li a {
 
 
 #slogan-section {
-    background-color: #272727;
+    background-color: #FFFFFF;
     text-align: center;
-    padding: 2rem;
-    border-bottom: 1px solid #9B0E0E;
+    padding: 6rem 2rem;
 }
 
 #slogan-section .tagline-1 {
     font-size: 2rem;
-    text-transform: uppercase;
-    color: #d4af37;
+    color: #AD7C00;
     letter-spacing: 2px;
     margin: 0;
 }
 
 #slogan-section .tagline-2 {
     font-size: 1.2rem;
-    color: #bfa76f;
+    color: #AD7C00;
     letter-spacing: 1px;
     margin: 0;
 }
 
 /* Sections */
 main section {
-    padding: 8rem 2rem;
+    padding: 6rem 2rem;
     position: relative;
-}
-
-main section:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(to right, #DAA520, #F0E68C, #DAA520);
 }
 
 #about p {
     max-width: 800px;
     margin: 0 auto 2rem auto;
     padding: 0 2rem;
-    text-align: justify;
 }
 
 h2 {
@@ -141,14 +125,39 @@ h2 {
     font-size: 3.5rem;
     text-align: center;
     margin-bottom: 2rem;
-    color: #F0E68C;
-    text-transform: uppercase;
-    text-shadow: 0 0 5px rgba(218, 165, 32, 0.5);
-    background-image: linear-gradient(to bottom, #F0E68C, #DAA520);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #000000;
+}
+
+#gallery, #services {
+    background-color: #272727;
+    color: #FFFFFF;
+}
+
+#gallery h2, #services h2 {
+    color: #FFFFFF;
+}
+
+/* Services Section */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-item {
+    border: 1px solid #FFFFFF;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.service-item h3 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
 }
 
 /* Gallery Slider */
@@ -209,19 +218,13 @@ footer {
     background-color: #272727;
     padding: 2rem;
     text-align: center;
+    color: #FFFFFF;
 }
 
 .footer-content h3 {
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    color: #F0E68C;
-    text-transform: uppercase;
-    text-shadow: 0 0 5px rgba(218, 165, 32, 0.5);
-    background-image: linear-gradient(to bottom, #F0E68C, #DAA520);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #FFFFFF;
 }
 
 .footer-content h3 i {
