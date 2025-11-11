@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     navSlide();
 
     if (window.innerWidth <= 768) {
+        setupServiceSlider();
         autoServiceSlide();
-        setServiceSliderHeight();
+        window.addEventListener('resize', setupServiceSlider); // Recalculate on resize
     }
 });
 
@@ -15,7 +16,8 @@ const navSlide = () => {
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         // Toggle Nav
         nav.classList.toggle('nav-active');
 
@@ -27,6 +29,15 @@ const navSlide = () => {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
             }
         });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (nav.classList.contains('nav-active') && !nav.contains(e.target)) {
+            nav.classList.remove('nav-active');
+            navLinks.forEach(link => {
+                link.style.animation = '';
+            });
+        }
     });
 }
 
@@ -146,6 +157,7 @@ const galleryImages = [
 ];
 
 let slideIndex = 0;
+let autoSlideInterval;
 
 function loadGalleryImages() {
     const slidesContainer = document.querySelector('.slides');
@@ -163,15 +175,39 @@ function moveSlide(n) {
     }
     const offset = -slideIndex * 100;
     document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+    resetAutoSlide();
 }
 
 function autoSlide() {
-    setInterval(() => {
+    autoSlideInterval = setInterval(() => {
         moveSlide(1);
     }, 3000); // Change image every 3 seconds
 }
 
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlide();
+}
+
 let serviceSlideIndex = 0;
+let autoServiceSlideInterval;
+
+function setupServiceSlider() {
+    const slider = document.querySelector('.services-slider');
+    const slidesContainer = document.querySelector('.services-slides');
+    const slides = document.querySelectorAll('.service-item');
+    
+    if (slides.length > 0) {
+        const slideWidth = slider.getBoundingClientRect().width;
+        slides.forEach(slide => {
+            slide.style.width = slideWidth + 'px';
+        });
+        slidesContainer.style.width = (slideWidth * slides.length) + 'px';
+        setServiceSliderHeight();
+        // Go to current slide to apply new width
+        moveServiceSlide(0);
+    }
+}
 
 function setServiceSliderHeight() {
     const slides = document.querySelectorAll('.service-item');
@@ -182,21 +218,36 @@ function setServiceSliderHeight() {
 }
 
 function moveServiceSlide(n) {
+    const slider = document.querySelector('.services-slider');
     const slides = document.querySelectorAll('.service-item');
-    serviceSlideIndex += n;
+    const slideWidth = slider.getBoundingClientRect().width;
+
+    if (n !== 0) { // Only increment/decrement if not just repositioning
+        serviceSlideIndex += n;
+    }
+
     if (serviceSlideIndex >= slides.length) {
         serviceSlideIndex = 0;
     }
     if (serviceSlideIndex < 0) {
         serviceSlideIndex = slides.length - 1;
     }
-    const offset = -serviceSlideIndex * 100;
-    document.querySelector('.services-slides').style.transform = `translateX(${offset}%)`;
+    const offset = -serviceSlideIndex * slideWidth;
+    document.querySelector('.services-slides').style.transform = `translateX(${offset}px)`;
     setServiceSliderHeight();
+    
+    if (n !== 0) {
+        resetAutoServiceSlide();
+    }
 }
 
 function autoServiceSlide() {
-    setInterval(() => {
+    autoServiceSlideInterval = setInterval(() => {
         moveServiceSlide(1);
     }, 3000); // Change image every 3 seconds
+}
+
+function resetAutoServiceSlide() {
+    clearInterval(autoServiceSlideInterval);
+    autoServiceSlide();
 }
