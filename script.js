@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     switchLang('en');
     autoSlide();
     navSlide();
+
+    if (window.innerWidth <= 768) {
+        autoServiceSlide();
+        setServiceSliderHeight();
+    }
 });
 
 const navSlide = () => {
@@ -163,5 +168,35 @@ function moveSlide(n) {
 function autoSlide() {
     setInterval(() => {
         moveSlide(1);
+    }, 3000); // Change image every 3 seconds
+}
+
+let serviceSlideIndex = 0;
+
+function setServiceSliderHeight() {
+    const slides = document.querySelectorAll('.service-item');
+    const slider = document.querySelector('.services-slider');
+    if (slides.length > 0) {
+        slider.style.height = slides[serviceSlideIndex].offsetHeight + 'px';
+    }
+}
+
+function moveServiceSlide(n) {
+    const slides = document.querySelectorAll('.service-item');
+    serviceSlideIndex += n;
+    if (serviceSlideIndex >= slides.length) {
+        serviceSlideIndex = 0;
+    }
+    if (serviceSlideIndex < 0) {
+        serviceSlideIndex = slides.length - 1;
+    }
+    const offset = -serviceSlideIndex * 100;
+    document.querySelector('.services-slides').style.transform = `translateX(${offset}%)`;
+    setServiceSliderHeight();
+}
+
+function autoServiceSlide() {
+    setInterval(() => {
+        moveServiceSlide(1);
     }, 3000); // Change image every 3 seconds
 }

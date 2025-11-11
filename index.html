@@ -34,6 +34,8 @@
     <main>
         <section id="banner">
             <div class="banner-content">
+                <h1>Plan Your Car Delivery Across Europe</h1>
+                <a href="#contact" class="btn">Contact Us Now</a>
             </div>
         </section>
 
@@ -59,34 +61,42 @@
 
         <section id="services">
             <h2 data-lang="services-title">Our Services</h2>
-            <div class="services-container">
-                <div class="service-item">
-                    <h3 data-lang="service1-title">Door-to-Door Car Transport</h3>
-                    <p data-lang="service1-desc">We collect and deliver your vehicle directly from your chosen locations anywhere in Europe.</p>
+            <div class="services-slider">
+                <div class="services-slides">
+                    <div class="service-item">
+                        <h3 data-lang="service1-title">Door-to-Door Car Transport</h3>
+                        <p data-lang="service1-desc">We collect and deliver your vehicle directly from your chosen locations anywhere in Europe.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 data-lang="service2-title">Enclosed Carrier Transport</h3>
+                        <p data-lang="service2-desc">Your car travels in a fully enclosed trailer, protected from weather, road debris, and prying eyes.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 data-lang="service3-title">European Vehicle Transport</h3>
+                        <p data-lang="service3-desc">Reliable and secure car delivery between any European countries.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 data-lang="service4-title">Seasonal Relocation</h3>
+                        <p data-lang="service4-desc">Ideal for holiday homes or temporary stays — move your car with you anywhere in Europe.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 data-lang="service5-title">Insurance</h3>
+                        <p data-lang="service5-desc">Comprehensive insurance for total peace of mind.</p>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <h3 data-lang="service2-title">Enclosed Carrier Transport</h3>
-                    <p data-lang="service2-desc">Your car travels in a fully enclosed trailer, protected from weather, road debris, and prying eyes.</p>
-                </div>
-                <div class="service-item">
-                    <h3 data-lang="service3-title">European Vehicle Transport</h3>
-                    <p data-lang="service3-desc">Reliable and secure car delivery between any European countries.</p>
-                </div>
-                <div class="service-item">
-                    <h3 data-lang="service4-title">Seasonal Relocation</h3>
-                    <p data-lang="service4-desc">Ideal for holiday homes or temporary stays — move your car with you anywhere in Europe.</p>
-                </div>
-                <div class="service-item">
-                    <h3 data-lang="service5-title">Insurance</h3>
-                    <p data-lang="service5-desc">Comprehensive insurance for total peace of mind.</p>
-                </div>
+                <button class="services-prev" onclick="moveServiceSlide(-1)">&#10094;</button>
+                <button class="services-next" onclick="moveServiceSlide(1)">&#10095;</button>
             </div>
         </section>
 
         <section id="contact">
             <h2 data-lang="contact-title">Contact Us</h2>
-            <p data-lang="contact-text">For inquiries and bookings, please contact us at:</p>
-            <a href="mailto:info@prestigetransport.ch"><i class="fas fa-envelope"></i> info@prestigetransport.ch</a>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
         </section>
     </main>
 
@@ -97,6 +107,7 @@
                 <p>Prestige Transport S.à.r.l.</p>
                 <p>Impasse de la délèje 5</p>
                 <p>1625 Maules, Swiss</p>
+                <p><a href="mailto:info@prestigetransport.ch">info@prestigetransport.ch</a></p>
             </div>
             <div class="social-media">
                 <h3 data-lang="social-title"><i class="fas fa-share-alt"></i> Follow Us</h3>
