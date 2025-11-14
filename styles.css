@@ -19,6 +19,7 @@ body {
     scroll-behavior: smooth;
     line-height: 1.6;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding-top: 92px; /* Height of the fixed header */
 }
 
 a {
@@ -34,8 +35,9 @@ a:hover {
 header {
     background-color: #FFFFFF;
     padding: 1rem 2rem;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
     border-bottom: 1px solid #3D3D3D;
 }
