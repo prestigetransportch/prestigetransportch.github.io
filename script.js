@@ -3,12 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     switchLang('en');
     autoSlide();
     navSlide();
-
-    if (window.innerWidth <= 768) {
-        setupServiceSlider();
-        autoServiceSlide();
-        window.addEventListener('resize', setupServiceSlider); // Recalculate on resize
-    }
 });
 
 const navSlide = () => {
@@ -32,12 +26,21 @@ const navSlide = () => {
     });
 
     document.addEventListener('click', (e) => {
-        if (nav.classList.contains('nav-active') && !nav.contains(e.target)) {
+        if (nav.classList.contains('nav-active') && !nav.contains(e.target) && !hamburger.contains(e.target)) {
             nav.classList.remove('nav-active');
             navLinks.forEach(link => {
                 link.style.animation = '';
             });
         }
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');
+            navLinks.forEach(item => {
+                item.style.animation = '';
+            });
+        });
     });
 }
 
@@ -115,7 +118,7 @@ const translations = {
         'service3-title': 'Europäischer Fahrzeugtransport',
         'service3-desc': 'Zuverlässige und sichere Autozustellung zwischen allen europäischen Ländern.',
         'service4-title': 'Saisonaler Umzug',
-        'service4-desc': 'Ideal für Ferienhäuser oder temporäre Aufenthalte - bewegen Sie Ihr Auto mit Ihnen überall in Europa.',
+        'service4-desc': 'Idéal pour les maisons de vacances ou les séjours temporaires - déplacez votre voiture avec vous partout en Europe.',
         'service5-title': 'Versicherung',
         'service5-desc': 'Umfassende Versicherung für absolute Sorgenfreiheit.',
         'contact-title': 'Kontaktieren Sie uns',
@@ -187,67 +190,4 @@ function autoSlide() {
 function resetAutoSlide() {
     clearInterval(autoSlideInterval);
     autoSlide();
-}
-
-let serviceSlideIndex = 0;
-let autoServiceSlideInterval;
-
-function setupServiceSlider() {
-    const slider = document.querySelector('.services-slider');
-    const slidesContainer = document.querySelector('.services-slides');
-    const slides = document.querySelectorAll('.service-item');
-    
-    if (slides.length > 0) {
-        const slideWidth = slider.getBoundingClientRect().width;
-        slides.forEach(slide => {
-            slide.style.width = slideWidth + 'px';
-        });
-        slidesContainer.style.width = (slideWidth * slides.length) + 'px';
-        setServiceSliderHeight();
-        // Go to current slide to apply new width
-        moveServiceSlide(0);
-    }
-}
-
-function setServiceSliderHeight() {
-    const slides = document.querySelectorAll('.service-item');
-    const slider = document.querySelector('.services-slider');
-    if (slides.length > 0) {
-        slider.style.height = slides[serviceSlideIndex].offsetHeight + 'px';
-    }
-}
-
-function moveServiceSlide(n) {
-    const slider = document.querySelector('.services-slider');
-    const slides = document.querySelectorAll('.service-item');
-    const slideWidth = slider.getBoundingClientRect().width;
-
-    if (n !== 0) { // Only increment/decrement if not just repositioning
-        serviceSlideIndex += n;
-    }
-
-    if (serviceSlideIndex >= slides.length) {
-        serviceSlideIndex = 0;
-    }
-    if (serviceSlideIndex < 0) {
-        serviceSlideIndex = slides.length - 1;
-    }
-    const offset = -serviceSlideIndex * slideWidth;
-    document.querySelector('.services-slides').style.transform = `translateX(${offset}px)`;
-    setServiceSliderHeight();
-    
-    if (n !== 0) {
-        resetAutoServiceSlide();
-    }
-}
-
-function autoServiceSlide() {
-    autoServiceSlideInterval = setInterval(() => {
-        moveServiceSlide(1);
-    }, 3000); // Change image every 3 seconds
-}
-
-function resetAutoServiceSlide() {
-    clearInterval(autoServiceSlideInterval);
-    autoServiceSlide();
 }
