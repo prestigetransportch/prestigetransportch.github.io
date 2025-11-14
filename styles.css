@@ -186,26 +186,50 @@ h2 {
 }
 
 /* Services Section */
-.services-container {
-    max-width: 1200px;
+.accordion {
+    max-width: 800px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
 }
 
-.service-item {
-    border: 1px solid #FFFFFF;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
+.accordion-item {
+    border-bottom: 1px solid #FFFFFF;
 }
 
-.service-item h3 {
+.accordion-header {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header h3 {
     font-family: 'Cinzel', serif;
     font-weight: 700;
     color: #FFFFFF;
-    margin-bottom: 1rem;
+    margin: 0;
+}
+
+.accordion-header::after {
+    content: '+';
+    font-size: 2rem;
+    color: #FFFFFF;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header::after {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content p {
+    padding: 0 1.5rem 1.5rem;
+    margin: 0;
 }
 
 /* Gallery Slider */
@@ -352,14 +376,6 @@ footer {
 
     .lang-switcher-mobile {
         display: block;
-    }
-
-    .services-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-item {
-        padding: 1rem;
     }
 
     .banner-content h1 {
