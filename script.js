@@ -46,33 +46,15 @@ const navSlide = () => {
 }
 
 const accordion = () => {
-    const accordionItems = document.querySelectorAll('.accordion-item');
-
-    accordionItems.forEach(item => {
-        const header = item.querySelector('.accordion-header');
-        header.addEventListener('click', () => {
-            const currentlyActive = document.querySelector('.accordion-item.active');
-            if (currentlyActive && currentlyActive !== item) {
-                currentlyActive.classList.remove('active');
-                currentlyActive.querySelector('.accordion-content').style.maxHeight = 0;
-            }
-
-            item.classList.toggle('active');
-            const content = item.querySelector('.accordion-content');
-            if (item.classList.contains('active')) {
-                content.style.maxHeight = content.scrollHeight + 'px';
-            } else {
-                content.style.maxHeight = 0;
-            }
+    const inputs = document.querySelectorAll('.accordion-input');
+    inputs.forEach(input => {
+        input.addEventListener('click', (e) => {
+            inputs.forEach(otherInput => {
+                if (otherInput !== e.target) {
+                    otherInput.checked = false;
+                }
+            });
         });
-    });
-
-    document.addEventListener('click', (e) => {
-        const activeItem = document.querySelector('.accordion-item.active');
-        if (activeItem && !activeItem.contains(e.target)) {
-            activeItem.classList.remove('active');
-            activeItem.querySelector('.accordion-content').style.maxHeight = 0;
-        }
     });
 }
 
