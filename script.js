@@ -172,7 +172,7 @@ const galleryImages = [
     'imgs/gallery/img_5.jpg.jpg',
     'imgs/gallery/IMG_1398.png',
     'imgs/gallery/img_6.jpg.jpg',
-    'Imagem WhatsApp 2025-11-22 às 15.32.52_1ecc8646.jpg',
+    'imgs/gallery/Imagem WhatsApp 2025-11-22 às 15.32.52_1ecc8646.jpg',
     'imgs/gallery/IMG_1406.png',
     'imgs/gallery/IMG_1433.png',
     'imgs/gallery/IMG_1510.png',
