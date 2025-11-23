@@ -170,10 +170,10 @@ const galleryImages = [
     'imgs/gallery/img_2.jpg.jpg',
     'imgs/gallery/img_3.jpg.jpg',
     'imgs/gallery/img_4.jpg.jpg',
+    'imgs/gallery/img_9.jpg',
     'imgs/gallery/img_5.jpg.jpg',
-    'imgs/gallery/IMG_1398.png',
+    'imgs/gallery/img_8.jpg',
     'imgs/gallery/img_6.jpg.jpg',
-    'imgs/gallery/IMG_1406.png',
     'imgs/gallery/IMG_1433.png',
     'imgs/gallery/IMG_1510.png',
     'imgs/gallery/IMG_1513.png'
