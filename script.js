@@ -106,7 +106,7 @@ const translations = {
         'service1-desc': 'Nous enlevons et livrons votre véhicule directement aux endroits de votre choix, partout en Europe.',
         'service2-title': 'Transport par remorque fermé',
         'service2-desc': 'Votre voiture voyage dans une remorque entièrement fermée, protégée des intempéries, des débris de la route et des regards indiscrets.',
-        'service3-title': 'Transport de véhicules à travers l'Europe',
+        'service3-title': 'Transport de véhicules à travers l\'Europe',
         'service3-desc': 'Livraison de voiture fiable and sécurisée entre tous les pays européens.',
         'service4-title': 'Déménagement saisonnier',
         'service4-desc': 'Idéal pour les maisons de vacances ou les séjours temporaires - déplacez votre voiture avec vous partout en Europe.',
