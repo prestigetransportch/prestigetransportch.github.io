@@ -124,7 +124,7 @@ const translations = {
         services: 'Dienstleistungen',
         contact: 'Kontakt',
         'banner-title': 'Planen Sie Ihre Autolieferung in ganz Europa',
-        'banner-btn': 'Kontaktieren Sie uns jetzt',
+        'banner-btn': 'Kontaktieren Sie uns',
         tagline1: 'Because Luxury Deserves First-Class Transport',
         tagline2: 'Sitz in der Schweiz, für ganz Europa',
         'gallery-title': 'Galerie',
