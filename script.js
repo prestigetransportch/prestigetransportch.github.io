@@ -91,7 +91,7 @@ const translations = {
     fr: {
         home: 'Accueil',
         gallery: 'Galerie',
-        about: 'À propos de nous',
+        about: 'À propos',
         services: 'Services',
         contact: 'Contact',
         'banner-title': 'Planifiez la livraison de votre voiture à travers l\'Europe',
