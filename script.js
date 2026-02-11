@@ -163,20 +163,20 @@ function switchLang(lang) {
 }
 
 const galleryImages = [
-    '/imgs/gallery/IMG_0957.png',
-    '/imgs/gallery/img_7.jpg',
-    '/imgs/gallery/IMG_1188.png',
-    '/imgs/gallery/img_1.jpg',
-    '/imgs/gallery/img_2.jpg.jpg',
-    '/imgs/gallery/img_3.jpg.jpg',
-    '/imgs/gallery/img_4.jpg.jpg',
-    '/imgs/gallery/img_9.jpg',
-    '/imgs/gallery/img_5.jpg.jpg',
-    '/imgs/gallery/img_8.jpg',
-    '/imgs/gallery/img_6.jpg.jpg',
-    '/imgs/gallery/IMG_1433.png',
-    '/imgs/gallery/IMG_1510.png',
-    '/imgs/gallery/IMG_1513.png'
+    '/imgs/gallery/296.jpg',
+    '/imgs/gallery/sp3.jpg',
+    '/imgs/gallery/gt.f.jpg',
+    '/imgs/gallery/gt.b.jpg',
+    '/imgs/gallery/sf90r.f.jpg',
+    '/imgs/gallery/sf90r.b.jpg',
+    '/imgs/gallery/935.f.jpg',
+    '/imgs/gallery/935.jpg',
+    '/imgs/gallery/sf90y.f.jpg',
+    '/imgs/gallery/sf90y.b.jpg',
+    '/imgs/gallery/sport.f.jpg',
+    '/imgs/gallery/sport.b.jpg',
+    '/imgs/gallery/indiana.f.jpg',
+    '/imgs/gallery/indiana.b.jpg'
 ];
 
 let slideIndex = 0;
