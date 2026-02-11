@@ -163,18 +163,18 @@ function switchLang(lang) {
 }
 
 const galleryImages = [
-    '/imgs/gallery/296.jpg',
-    '/imgs/gallery/sp3.jpg',
+    '/imgs/gallery/296.jpeg',
+    '/imgs/gallery/sp3.jpeg',
     '/imgs/gallery/gt.f.jpg',
     '/imgs/gallery/gt.b.jpg',
-    '/imgs/gallery/sf90r.f.jpg',
-    '/imgs/gallery/sf90r.b.jpg',
-    '/imgs/gallery/935.f.jpg',
-    '/imgs/gallery/935.jpg',
-    '/imgs/gallery/sf90y.f.jpg',
-    '/imgs/gallery/sf90y.b.jpg',
-    '/imgs/gallery/sport.f.jpg',
-    '/imgs/gallery/sport.b.jpg',
+    '/imgs/gallery/sf90r.f.jpeg',
+    '/imgs/gallery/sf90r.b.jpeg',
+    '/imgs/gallery/935.f.jpeg',
+    '/imgs/gallery/935.jpeg',
+    '/imgs/gallery/sf90y.f.jpeg',
+    '/imgs/gallery/sf90y.b.jpeg',
+    '/imgs/gallery/sport.f.jpeg',
+    '/imgs/gallery/sport.b.jpeg',
     '/imgs/gallery/indiana.f.jpg',
     '/imgs/gallery/indiana.b.jpg'
 ];
