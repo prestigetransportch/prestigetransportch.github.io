@@ -170,7 +170,7 @@ const galleryImages = [
     '/imgs/gallery/sf90r.f.jpeg',
     '/imgs/gallery/sf90r.b.jpeg',
     '/imgs/gallery/935.f.jpeg',
-    '/imgs/gallery/935.jpeg',
+    '/imgs/gallery/935.b.jpeg',
     '/imgs/gallery/sf90y.f.jpeg',
     '/imgs/gallery/sf90y.b.jpeg',
     '/imgs/gallery/sport.f.jpeg',
