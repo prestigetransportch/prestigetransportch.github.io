@@ -163,7 +163,7 @@ function switchLang(lang) {
 }
 
 const galleryImages = [
-    '/imgs/gallery/296.jpeg',
+    '/imgs/gallery/296.jpg',
     '/imgs/gallery/sp3.jpeg',
     '/imgs/gallery/gt.f.jpg',
     '/imgs/gallery/gt.b.jpg',
